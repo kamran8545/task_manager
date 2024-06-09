@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:task_manager_app/models/task_model.dart';
 import 'package:task_manager_app/presentation/home_screen/view/widgets/text_field_widget.dart';
+import 'package:task_manager_app/utils/app_constants.dart';
 import 'package:uuid/uuid.dart';
 
 import '../../../../utils/app_colors.dart';
@@ -57,6 +58,7 @@ class CreateTaskBottomSheet extends ConsumerWidget {
     var homeController = ref.watch(homeScreenNotifierProvider);
 
     return Column(
+      key: Key(AppConstants.createTaskBottomSheetKey),
       mainAxisSize: MainAxisSize.min,
       children: [
         Padding(

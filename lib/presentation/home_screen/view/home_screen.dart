@@ -6,6 +6,7 @@ import 'package:task_manager_app/presentation/home_screen/view/widgets/create_ta
 import 'package:task_manager_app/presentation/home_screen/view/widgets/task_widget.dart';
 
 import '../../../utils/app_colors.dart';
+import '../../../utils/app_constants.dart';
 import '../notifier/home_screen_notifier.dart';
 
 class HomeScreen extends ConsumerWidget {
@@ -34,6 +35,7 @@ class HomeScreen extends ConsumerWidget {
         ),
       ),
       body: Container(
+        key: Key(AppConstants.homeScreenBodyKey),
         margin: EdgeInsets.symmetric(horizontal: 20.w),
         child: homeController.isLoading
             ? const Center(
@@ -53,6 +55,7 @@ class HomeScreen extends ConsumerWidget {
                   ),
       ),
       floatingActionButton: FloatingActionButton(
+        key: Key(AppConstants.createTaskFloatingButtonKey),
         backgroundColor: AppColors.mainColor,
         child: const Icon(
           Icons.add,
